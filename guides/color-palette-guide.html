@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Palette Guide | ToolBox</title>
+  <meta name="description" content="How to build usable color palettes for branding, UI, and content." />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="logo"><span class="logo-icon">⚙️</span><span>ToolBox</span></div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../resources.html">Resources</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Color Palette Guide</h1>
+      <p>Use color harmonies without sacrificing readability and consistency.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="tool-card">
+      <p>
+        Good color choices make a product feel intentional. Poor color choices make even strong content feel unpolished.
+        The challenge is that color is emotional and technical at the same time. A palette needs to express personality,
+        but it also needs to function under real constraints: contrast, accessibility, different screens, brand consistency,
+        and mixed content types such as text, cards, charts, icons, and call-to-action buttons. A usable palette is less
+        about finding one beautiful shade and more about designing a complete system of roles.
+      </p>
+      <br />
+      <p>
+        Start by choosing a base color that reflects your brand intent. This could be calm, energetic, premium, minimal,
+        playful, or technical. Once a base exists, harmony rules help generate supporting colors. Complementary palettes
+        give strong contrast and visual energy. Analogous palettes are smoother and easier for softer interfaces. Triadic
+        palettes create variety without total randomness. Split-complementary approaches often balance vibrancy with control.
+        A color tool helps you generate options quickly, but selection still requires judgment.
+      </p>
+      <br />
+      <p>
+        The biggest mistake in palette design is assigning colors without roles. Define roles first: background, surface,
+        primary action, secondary action, text, muted text, border, success, warning, and danger. If two colors look nice
+        but conflict in role clarity, usability suffers. Users should recognize interactive elements instantly. Reserve your
+        strongest accent for important actions and avoid spreading high-saturation color across every component.
+      </p>
+      <br />
+      <p>
+        Contrast is non-negotiable. A palette that looks attractive in a swatch grid can fail in real text scenarios.
+        Check body text against backgrounds, button labels against fills, and muted text in small sizes. If contrast is too
+        low, users strain to read and may abandon the page. Prioritize readability over aesthetic purity. Slightly adjusting
+        lightness or saturation can preserve mood while fixing accessibility issues.
+      </p>
+      <br />
+      <p>
+        Use saturation strategically. Highly saturated colors attract attention, so they should be limited to focal points.
+        If every element uses high saturation, nothing stands out. Neutral and low-saturation tones create visual breathing
+        room and improve hierarchy. This is especially important in tool-heavy interfaces where users scan quickly and need
+        obvious structure.
+      </p>
+      <br />
+      <p>
+        Dark themes require extra care. Mid-tone surfaces are often more readable than pure black backgrounds because pure
+        black can exaggerate contrast and cause eye fatigue in some contexts. Layered dark backgrounds help separate cards,
+        controls, and content zones. Accent colors in dark themes should be bright enough to stand out but not so bright
+        that they vibrate or bloom on high-contrast displays.
+      </p>
+      <br />
+      <p>
+        Think about consistency across use cases. Your palette should handle marketing banners, app UI, charts, and social
+        previews without falling apart. Build a small token set: one or two primary accents, two or three neutrals, and
+        semantic states. Then test these tokens in real components instead of isolated rectangles. If a color only works in
+        one context, it is not a reliable system color.
+      </p>
+      <br />
+      <p>
+        Another practical method is creating shade scales for core colors. Instead of one blue, define a sequence such as
+        100 through 900. Light shades can support backgrounds and chips; mid shades can support borders; darker shades can
+        handle text or pressed states. Shade scales make interface design more predictable and reduce one-off decisions.
+      </p>
+      <br />
+      <p>
+        Documentation matters, even for small projects. Keep a short style note describing where each color role is used.
+        Without documentation, palettes drift as new pages are added. Drift causes inconsistency that users notice, even if
+        they cannot explain it directly.
+      </p>
+      <br />
+      <p>
+        In practice, great palette work is iterative. Generate options, test in components, check contrast, and refine.
+        Color tools make exploration faster, but final quality comes from role clarity and real-world testing. If users can
+        read comfortably, navigate quickly, and identify key actions without effort, the palette is doing its job.
+      </p>
+      <br />
+      <p>
+        For content-heavy pages, separate decorative colors from functional colors. Decorative accents support mood and
+        storytelling, while functional colors communicate state and action. Mixing these roles can cause confusion, such as
+        using a decorative tone for warnings or error messages. Keep semantic meanings stable across the product so users do
+        not have to relearn signals from page to page.
+      </p>
+      <br />
+      <p>
+        Cross-platform consistency is another overlooked factor. A palette that looks balanced on one monitor can shift on
+        another due to brightness, color profile, and device quality. Test on at least one mobile screen and one desktop
+        display before finalizing. If possible, review in daylight and low-light environments. Real-world variation is why
+        conservative contrast choices usually outperform visually extreme palettes.
+      </p>
+      <br />
+      <p>
+        When teams grow, enforce palette discipline through design tokens and code variables. If every contributor defines
+        their own hex values, consistency breaks quickly. Centralized tokens in CSS variables or design systems make updates
+        safer and easier. One token change can propagate globally, which is ideal for seasonal refreshes, rebrands, and
+        accessibility improvements.
+      </p>
+      <br />
+      <p>
+        Effective color design is not about using more colors; it is about using fewer colors with clearer intent. A small,
+        well-structured palette usually feels more professional than a large, inconsistent one. If users can immediately
+        understand hierarchy, trust state colors, and read content comfortably, the palette is doing real work beyond style.
+      </p>
+      <br />
+      <p>
+        Before shipping, run a final palette audit using real page templates: homepage, article page, form-heavy tool page,
+        and error state page. Check whether interactive states remain obvious and whether muted text is still readable in
+        smaller sizes. This final audit catches edge cases that simple swatch reviews miss and helps ensure the palette is
+        durable as the site grows.
+      </p>
+          <div class="related-guides">
+        <h3 class="resource-heading">Related Guides</h3>
+        <div class="resource-list">
+          <a href="../resources.html">Browse Full Resource Library</a>
+          <a href="../tool-descriptions.html">Read Tool Descriptions</a>
+          <a href="../privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 ToolBox</p>
+      <p class="micro-links"><a href="../resources.html">resources</a><span>•</span><a href="../privacy.html">privacy policy</a><span>•</span><a href="../contact.html">contact us</a></p>
+    </div>
+  </footer>
+</body>
+</html>

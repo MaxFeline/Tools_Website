@@ -802,6 +802,58 @@ footer {
 footer p { color: var(--text2); font-size: .85rem; }
 footer .footer-note { font-size: .75rem; color: var(--text3); }
 
+.micro-links {
+  margin-top: .2rem;
+  font-size: .62rem;
+  color: #616184;
+  opacity: .85;
+  letter-spacing: .02em;
+}
+
+.micro-links a {
+  color: #616184;
+  text-decoration: none;
+}
+
+.micro-links a:hover {
+  color: #8a8ab4;
+  text-decoration: underline;
+}
+
+.micro-links span {
+  margin: 0 .35rem;
+}
+
+.resource-heading {
+  margin: 1.1rem 0 .55rem;
+  font-size: 1rem;
+  color: var(--accent2);
+}
+
+.resource-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: .5rem;
+}
+
+.resource-list a {
+  display: block;
+  padding: .6rem .75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text2);
+  text-decoration: none;
+  font-size: .85rem;
+  transition: border-color var(--trans), color var(--trans), transform var(--trans);
+}
+
+.resource-list a:hover {
+  border-color: var(--accent);
+  color: var(--accent2);
+  transform: translateY(-1px);
+}
+
 /* ══════════════════════════════════════
    SCROLLBAR
 ══════════════════════════════════════ */
@@ -826,6 +878,13 @@ footer .footer-note { font-size: .75rem; color: var(--text3); }
   nav a {
     font-size: .75rem;
     padding: .3rem .55rem;
+  }
+  .resource-list {
+    grid-template-columns: 1fr;
+  }
+  .micro-links {
+    font-size: .58rem;
+    line-height: 1.8;
   }
   .pw-output-wrap { flex-direction: column; }
   .btn-icon { align-self: flex-end; }
