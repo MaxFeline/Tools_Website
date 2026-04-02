@@ -54,6 +54,16 @@ svg {
   max-width: 100%;
 }
 
+a {
+  color: #CFD8DC;
+  text-decoration: none;
+  transition: color var(--trans);
+}
+
+a:hover {
+  color: #e8f0f5;
+}
+
 /* ══════════════════════════════════════
    HEADER
 ══════════════════════════════════════ */
@@ -368,11 +378,11 @@ input[type="radio"] {
   line-height: 1.5;
 }
 .affiliate-box a {
-  color: var(--accent2);
+  color: #CFD8DC;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.affiliate-box a:hover { color: #fff; }
+.affiliate-box a:hover { color: #e8f0f5; }
 
 /* ══════════════════════════════════════
    PASSWORD TOOL
@@ -811,12 +821,12 @@ footer .footer-note { font-size: .75rem; color: var(--text3); }
 }
 
 .micro-links a {
-  color: #616184;
+  color: #CFD8DC;
   text-decoration: none;
 }
 
 .micro-links a:hover {
-  color: #8a8ab4;
+  color: #e8f0f5;
   text-decoration: underline;
 }
 
@@ -842,7 +852,7 @@ footer .footer-note { font-size: .75rem; color: var(--text3); }
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
   background: var(--bg3);
-  color: var(--text2);
+  color: #CFD8DC;
   text-decoration: none;
   font-size: .85rem;
   transition: border-color var(--trans), color var(--trans), transform var(--trans);
@@ -850,7 +860,7 @@ footer .footer-note { font-size: .75rem; color: var(--text3); }
 
 .resource-list a:hover {
   border-color: var(--accent);
-  color: var(--accent2);
+  color: #e8f0f5;
   transform: translateY(-1px);
 }
 
