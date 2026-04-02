@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToolBox — Free Online Utility Tools</title>
+  <meta name="description" content="Free online tools: password generator, unit converter, color palette picker, tip calculator, BMI calculator, QR code maker, and a decision wheel." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚙️</span>
+        <span>ToolBox</span>
+      </div>
+      <nav>
+        <a href="#password">Password</a>
+        <a href="#converter">Converter</a>
+        <a href="#color">Colors</a>
+        <a href="#tip">Tip</a>
+        <a href="#bmi">BMI</a>
+        <a href="#qr">QR Code</a>
+        <a href="#wheel">Wheel</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container">
+      <h1>All the tiny tools you actually need</h1>
+      <p>Free, fast, no sign-up. Just&nbsp;tools.</p>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- ────────────────────────────── -->
+    <!-- 1. PASSWORD GENERATOR          -->
+    <!-- ────────────────────────────── -->
+    <section class="tool-card" id="password">
+      <div class="tool-header">
+        <span class="tool-icon">🔐</span>
+        <div>
+          <h2>Password Generator</h2>
+          <p class="tool-desc">Create strong, secure passwords in seconds.</p>
+        </div>
+      </div>
+
+      <div class="pw-output-wrap">
+        <input type="text" id="pw-output" class="pw-output" readonly placeholder="Your password will appear here…" />
+        <button class="btn-icon" id="pw-copy" title="Copy password">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+
+      <!-- Strength bar -->
+      <div class="strength-wrap">
+        <div class="strength-bar">
+          <div id="strength-fill" class="strength-fill"></div>
+        </div>
+        <span id="strength-label" class="strength-label">—</span>
+      </div>
+
+      <div class="pw-controls">
+        <label class="range-label">
+          Length: <strong id="pw-len-display">16</strong>
+          <input type="range" id="pw-length" min="6" max="64" value="16" />
+        </label>
+
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="pw-upper" checked /> Uppercase (A–Z)</label>
+          <label><input type="checkbox" id="pw-lower" checked /> Lowercase (a–z)</label>
+          <label><input type="checkbox" id="pw-numbers" checked /> Numbers (0–9)</label>
+          <label><input type="checkbox" id="pw-symbols" checked /> Symbols (!@#…)</label>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="pw-generate">Generate Password</button>
+
+      <!-- Affiliate nudge -->
+      <div class="affiliate-box">
+        💡 <strong>Pro tip:</strong> Never memorise passwords — use a password manager like
+        <a href="https://go.nordpass.io/aff_c?offer_id=488&aff_id=your_id" target="_blank" rel="noopener">NordPass</a>
+        or <a href="https://www.amazon.com/dp/B07M6Z2FJB?tag=yourtag-20" target="_blank" rel="noopener">Bitwarden Premium</a>
+        to store them safely.
+      </div>
+    </section>
+
+    <!-- ────────────────────────────── -->
+    <!-- 2. UNIT CONVERTER               -->
+    <!-- ────────────────────────────── -->
+    <section class="tool-card" id="converter">
+      <div class="tool-header">
+        <span class="tool-icon">📐</span>
+        <div>
+          <h2>Unit Converter</h2>
+          <p class="tool-desc">Length, weight, temperature, and volume.</p>
+        </div>
+      </div>
+
+      <div class="conv-type-tabs" id="conv-tabs">
+        <button class="tab active" data-type="length">Length</button>
+        <button class="tab" data-type="weight">Weight</button>
+        <button class="tab" data-type="temp">Temp</button>
+        <button class="tab" data-type="volume">Volume</button>
+      </div>
+
+      <div class="conv-row">
+        <div class="conv-side">
+          <input type="number" id="conv-from-val" class="input-field" placeholder="0" />
+          <select id="conv-from-unit" class="select-field"></select>
+        </div>
+        <div class="conv-arrow">⇄</div>
+        <div class="conv-side">
+          <input type="number" id="conv-to-val" class="input-field" readonly placeholder="Result" />
+          <select id="conv-to-unit" class="select-field"></select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────── -->
+    <!-- 3. COLOR PALETTE PICKER        -->
+    <!-- ────────────────────────────── -->
+    <section class="tool-card" id="color">
+      <div class="tool-header">
+        <span class="tool-icon">🎨</span>
+        <div>
+          <h2>Color Palette Picker</h2>
+          <p class="tool-desc">Generate harmonious palettes from a base color.</p>
+        </div>
+      </div>
+
+      <div class="color-controls">
+        <label class="color-picker-label">
+          Base color
+          <input type="color" id="base-color" value="#6c63ff" />
+        </label>
+        <div class="checkbox-group horiz">
+          <label><input type="radio" name="harmony" value="complementary" checked /> Complementary</label>
+          <label><input type="radio" name="harmony" value="analogous" /> Analogous</label>
+          <label><input type="radio" name="harmony" value="triadic" /> Triadic</label>
+          <label><input type="radio" name="harmony" value="split" /> Split-comp</label>
+        </div>
+        <button class="btn btn-primary" id="gen-palette">Generate Palette</button>
+      </div>
+
+      <div id="palette-swatches" class="palette-swatches"></div>
+    </section>
+
+    <!-- ────────────────────────────── -->
+    <!-- 4. TIP CALCULATOR               -->
+    <!-- ────────────────────────────── -->
+    <section class="tool-card" id="tip">
+      <div class="tool-header">
+        <span class="tool-icon">🧾</span>
+        <div>
+          <h2>Tip Calculator</h2>
+          <p class="tool-desc">Split the bill without the maths.</p>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <label class="form-label">
+          Bill total ($)
+          <input type="number" id="tip-bill" class="input-field" placeholder="0.00" min="0" step="0.01" />
+        </label>
+        <label class="form-label">
+          Tip %
+          <div class="tip-pct-row">
+            <button class="btn-outline tip-pct-btn" data-pct="10">10%</button>
+            <button class="btn-outline tip-pct-btn" data-pct="15">15%</button>
+            <button class="btn-outline tip-pct-btn active" data-pct="20">20%</button>
+            <button class="btn-outline tip-pct-btn" data-pct="25">25%</button>
+            <input type="number" id="tip-custom" class="input-field compact" placeholder="Custom" min="0" />
+          </div>
+        </label>
+        <label class="form-label">
+          Number of people
+          <input type="number" id="tip-people" class="input-field" value="1" min="1" step="1" />
+        </label>
+      </div>
+
+      <div class="tip-results">
+        <div class="tip-result-box">
+          <span class="tip-result-label">Tip per person</span>
+          <span class="tip-result-val" id="tip-per-person">$0.00</span>
+        </div>
+        <div class="tip-result-box">
+          <span class="tip-result-label">Total per person</span>
+          <span class="tip-result-val" id="tip-total-per">$0.00</span>
+        </div>
+        <div class="tip-result-box">
+          <span class="tip-result-label">Grand total</span>
+          <span class="tip-result-val" id="tip-grand">$0.00</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────── -->
+    <!-- 5. BMI CALCULATOR               -->
+    <!-- ────────────────────────────── -->
+    <section class="tool-card" id="bmi">
+      <div class="tool-header">
+        <span class="tool-icon">⚖️</span>
+        <div>
+          <h2>BMI Calculator</h2>
+          <p class="tool-desc">Body Mass Index with category breakdown.</p>
+        </div>
+      </div>
+
+      <div class="bmi-unit-toggle">
+        <button class="tab active" id="bmi-metric-btn" data-unit="metric">Metric (kg / cm)</button>
+        <button class="tab" id="bmi-imperial-btn" data-unit="imperial">Imperial (lbs / in)</button>
+      </div>
+
+      <div class="form-grid" id="bmi-metric-fields">
+        <label class="form-label">
+          Weight (kg)
+          <input type="number" id="bmi-kg" class="input-field" placeholder="70" min="1" />
+        </label>
+        <label class="form-label">
+          Height (cm)
+          <input type="number" id="bmi-cm" class="input-field" placeholder="175" min="1" />
+        </label>
+      </div>
+      <div class="form-grid hidden" id="bmi-imperial-fields">
+        <label class="form-label">
+          Weight (lbs)
+          <input type="number" id="bmi-lbs" class="input-field" placeholder="154" min="1" />
+        </label>
+        <label class="form-label">
+          Height (in)
+          <input type="number" id="bmi-in" class="input-field" placeholder="69" min="1" />
+        </label>
+      </div>
+
+      <button class="btn btn-primary" id="bmi-calc">Calculate BMI</button>
+
+      <div id="bmi-result" class="bmi-result hidden">
+        <div id="bmi-gauge-wrap" class="bmi-gauge-wrap">
+          <canvas id="bmi-gauge" width="280" height="150"></canvas>
+          <div id="bmi-value-display" class="bmi-value-display"></div>
+        </div>
+        <div id="bmi-category" class="bmi-category"></div>
+        <div id="bmi-scale" class="bmi-scale">
+          <span class="bmi-range underweight">Underweight &lt;18.5</span>
+          <span class="bmi-range normal">Normal 18.5–24.9</span>
+          <span class="bmi-range overweight">Overweight 25–29.9</span>
+          <span class="bmi-range obese">Obese ≥30</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────── -->
+    <!-- 6. QR CODE MAKER                -->
+    <!-- ────────────────────────────── -->
+    <section class="tool-card" id="qr">
+      <div class="tool-header">
+        <span class="tool-icon">📱</span>
+        <div>
+          <h2>QR Code Maker</h2>
+          <p class="tool-desc">Turn any URL or text into a scannable QR code.</p>
+        </div>
+      </div>
+
+      <div class="qr-controls">
+        <input type="text" id="qr-input" class="input-field" placeholder="https://example.com or any text…" />
+        <div class="qr-options">
+          <label class="form-label">
+            FG color
+            <input type="color" id="qr-dark" value="#ffffff" />
+          </label>
+          <label class="form-label">
+            BG color
+            <input type="color" id="qr-light" value="#1a1a2e" />
+          </label>
+          <label class="form-label">
+            Size (px)
+            <input type="number" id="qr-size" class="input-field compact" value="256" min="64" max="1024" step="32" />
+          </label>
+        </div>
+        <button class="btn btn-primary" id="qr-generate">Generate QR Code</button>
+      </div>
+
+      <div id="qr-output" class="qr-output hidden">
+        <div id="qr-canvas-wrap"></div>
+        <a id="qr-download" class="btn btn-secondary" download="qrcode.png">Download PNG</a>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────── -->
+    <!-- 7. DECISION WHEEL               -->
+    <!-- ────────────────────────────── -->
+    <section class="tool-card" id="wheel">
+      <div class="tool-header">
+        <span class="tool-icon">🎡</span>
+        <div>
+          <h2>Decision Wheel</h2>
+          <p class="tool-desc">Can't decide what to eat? Let fate choose.</p>
+        </div>
+      </div>
+
+      <div class="wheel-layout">
+        <div class="wheel-options-panel">
+          <div id="wheel-items-list" class="wheel-items-list"></div>
+          <div class="wheel-add-row">
+            <input type="text" id="wheel-new-item" class="input-field" placeholder="Add option…" maxlength="30" />
+            <button class="btn btn-primary" id="wheel-add-btn">Add</button>
+          </div>
+          <button class="btn btn-secondary" id="wheel-reset-btn">Reset to defaults</button>
+        </div>
+
+        <div class="wheel-canvas-wrap">
+          <canvas id="wheel-canvas" width="320" height="320"></canvas>
+          <button class="btn btn-spin" id="wheel-spin-btn">SPIN</button>
+          <div id="wheel-result" class="wheel-result hidden"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2026 ToolBox — Built for humans, powered by curiosity.</p>
+      <p class="footer-note">
+        Some links are affiliate links. We may earn a small commission at no cost to you.
+      </p>
+    </div>
+  </footer>
+
+  <!-- QR Code library (no server needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
