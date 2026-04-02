@@ -28,18 +28,27 @@
 
 html { scroll-behavior: smooth; }
 
+/* Prevent sticky header from covering anchored sections. */
+main section[id] { scroll-margin-top: 7rem; }
+
 body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 1.25rem;
+}
+
+canvas,
+svg {
+  max-width: 100%;
 }
 
 /* ══════════════════════════════════════
@@ -748,7 +757,11 @@ input[type="radio"] {
   gap: 1rem;
 }
 
-#wheel-canvas { display: block; }
+#wheel-canvas {
+  display: block;
+  width: min(320px, 100%);
+  height: auto;
+}
 
 .wheel-result {
   background: var(--surface2);
@@ -798,11 +811,34 @@ footer .footer-note { font-size: .75rem; color: var(--text3); }
    RESPONSIVE
 ══════════════════════════════════════ */
 @media (max-width: 600px) {
+  main section[id] { scroll-margin-top: 10.5rem; }
+  .container { padding: 0 .85rem; }
   .tool-card { padding: 1.25rem; }
   .header-inner { flex-direction: column; align-items: flex-start; }
-  nav { gap: .15rem; }
+  nav {
+    width: 100%;
+    gap: .2rem;
+  }
+  nav a {
+    font-size: .75rem;
+    padding: .3rem .55rem;
+  }
+  .pw-output-wrap { flex-direction: column; }
+  .btn-icon { align-self: flex-end; }
+  .range-label { min-width: 0; width: 100%; }
+  .form-grid { grid-template-columns: 1fr; }
+  .tip-pct-row > * { flex: 1 1 80px; }
+  .tip-pct-row .input-field.compact { max-width: none; }
+  .qr-options { width: 100%; }
+  .qr-options .form-label { flex: 1 1 120px; min-width: 0; }
   .conv-row { flex-direction: column; }
   .conv-arrow { transform: rotate(90deg); align-self: center; }
-  .wheel-layout { flex-direction: column; align-items: center; }
-  #wheel-canvas { width: 280px; height: 280px; }
+  .conv-side { min-width: 0; width: 100%; }
+  .wheel-layout { flex-direction: column; align-items: stretch; }
+  .wheel-options-panel { min-width: 0; }
+  .wheel-canvas-wrap { width: 100%; }
+  #wheel-canvas {
+    width: min(280px, 100%);
+    margin: 0 auto;
+  }
 }
