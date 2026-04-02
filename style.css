@@ -26,10 +26,13 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
 
 /* Prevent sticky header from covering anchored sections. */
-main section[id] { scroll-margin-top: 7rem; }
+.tool-card[id] { scroll-margin-top: 5rem; }
 
 body {
   font-family: var(--font);
@@ -811,7 +814,8 @@ footer .footer-note { font-size: .75rem; color: var(--text3); }
    RESPONSIVE
 ══════════════════════════════════════ */
 @media (max-width: 600px) {
-  main section[id] { scroll-margin-top: 10.5rem; }
+  html { scroll-padding-top: 8rem; }
+  .tool-card[id] { scroll-margin-top: 8rem; }
   .container { padding: 0 .85rem; }
   .tool-card { padding: 1.25rem; }
   .header-inner { flex-direction: column; align-items: flex-start; }
